@@ -1,0 +1,20 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"features": {
+		"ghcr.io/devcontainers/features/azure-cli:1": {},
+		"ghcr.io/stuartleeks/dev-container-features/azure-cli-persistence:0": {},
+		"ghcr.io/stuartleeks/dev-container-features/shell-history:0": {},
+		"ghcr.io/audacioustux/devcontainers/k9s:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-kubernetes-tools.vscode-kubernetes-tools",
+				"ms-kubernetes-tools.vscode-aks-tools",
+				"redhat.vscode-yaml",
+				"lunuan.kubernetes-templates",
+				"GitHub.copilot"
+			]
+		}
+	}
+}
