@@ -14,7 +14,11 @@
 				"redhat.vscode-yaml",
 				"lunuan.kubernetes-templates",
 				"GitHub.copilot"
-			]
+			],
+			"settings": {
+				"editor.renderWhitespace": "all"
+			}
 		}
-	}
+	},
+	"postCreateCommand": "git clone https://github.com/ahmetb/kubectx.git ~/.kubectx && COMPDIR=$(pkg-config --variable=completionsdir bash-completion) && sudo ln -sf ~/.kubectx/completion/kubens.bash $COMPDIR/kubens && sudo ln -sf ~/.kubectx/completion/kubectx.bash $COMPDIR/kubectx && echo -e '\\n\\n# kubectx and kubens\\nexport PATH=~/.kubectx:\\$PATH' >> ~/.bashrc"
 }
