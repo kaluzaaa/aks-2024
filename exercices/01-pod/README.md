@@ -140,11 +140,6 @@ kubectl exec nginx -- ls /usr/share/nginx/html
 kubectl exec -it nginx -- bash
 ```
 
-3. Sprawdź procesy w kontenerze:
-```bash
-kubectl exec nginx -- ps aux
-```
-
 ### Kopiowanie plików
 
 1. Utwórz lokalny plik testowy:
