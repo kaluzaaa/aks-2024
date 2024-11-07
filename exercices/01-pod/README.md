@@ -125,12 +125,7 @@ Ponownie zobaczysz błąd, ponieważ create nie może aktualizować istniejącyc
 ```bash
 kubectl apply -f nginx-pod.yaml
 ```
-Tym razem operacja się powiedzie, ponieważ apply potrafi aktualizować istniejące zasoby
-
-5. Sprawdź, czy zmiany zostały wprowadzone:
-```bash
-kubectl describe pod nginx | grep Memory
-```
+Tym razem operacja równie się nie powiedzie, ponieważ apply potrafi aktualizować istniejące zasoby (ale POD nie może być aktualizowany).
 
 ## Zadanie 5: Operacje na kontenerze
 
