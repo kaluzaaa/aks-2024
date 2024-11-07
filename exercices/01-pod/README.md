@@ -64,8 +64,7 @@ kubectl apply -f nginx-pod.yaml
 kubectl run nginx \
   --image=nginx \
   --labels="name=nginx" \
-  --port=80 \
-  --limits="cpu=500m,memory=128Mi"
+  --port=80
 ```
 
 ### Porównanie metod create vs apply
