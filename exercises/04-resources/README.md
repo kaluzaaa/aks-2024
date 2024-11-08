@@ -101,11 +101,8 @@ spec:
 ```
 
 ### Kroki testowe:
-
----
-> [!IMPORTANT]  
+  
 > Potrzebujesz do tego zadania dwóch terminali
----
 
 1. Otwórz pierwszy terminal i uruchom monitoring podów:
 ```bash
