@@ -14,7 +14,7 @@ Celem zadania jest zrozumienie jak działają limity zasobów w Kubernetes, co s
   - Można używać sufixów: Ki, Mi, Gi
   - Przykład: 256Mi, 1Gi
 
-### Quality of Service (QoS) Classes
+#### Quality of Service (QoS) Classes
 1. **Guaranteed**
    - Requests = Limits dla CPU i pamięci
    - Najwyższy priorytet, najmniejsza szansa na usunięcie
