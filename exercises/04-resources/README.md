@@ -119,9 +119,9 @@ kubectl port-forward pod/kuard-oom 8080:8080
 
 4. Otwórz aplikację w przeglądarce (http://localhost:8080)
 
-5. Przejdź do zakładki "Memory"
+5. Przejdź do zakładki `Memory`
 
-6. Obserwuj pierwszy terminal z `kubectl get pods -w` i zacznij klikać "Grow" kilka razy, aby zwiększyć zużycie pamięci powyżej 100Mi
+6. Obserwuj pierwszy terminal z `kubectl get pods -w` i zacznij klikać `Grow` kilka razy, aby zwiększyć zużycie pamięci powyżej 100Mi
 
 7. W pierwszym terminalu zobaczysz:
 ```
