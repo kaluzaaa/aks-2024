@@ -1,3 +1,7 @@
+---
+title: "Tworzenie i zarządzanie Pod w Kubernetes"
+---
+
 # Tworzenie i zarządzanie Pod w Kubernetes
 
 ## Cel zadania
