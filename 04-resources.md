@@ -1,3 +1,6 @@
+---
+title: "🔧 Zarządzanie zasobami w Kubernetes: Resources, Limits i QoS"
+---
 # 🔧 Zarządzanie zasobami w Kubernetes: Resources, Limits i QoS
 
 ## 🎯 Cel zadania
