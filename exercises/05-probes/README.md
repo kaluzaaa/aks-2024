@@ -135,6 +135,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: kuard-readiness
+  labels:
+    app: kuard
 spec:
   containers:
   - name: kuard
