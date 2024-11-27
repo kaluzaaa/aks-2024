@@ -211,22 +211,22 @@ kubectl get pods -w
 
 2. W drugim terminalu utwórz pod:
 ```bash
-kubectl apply -f combined-probes.yaml
+kubectl apply -f kuard-combined.yaml
 ```
 
 3. Obserwuj stany poda:
 ```bash
-kubectl describe pod combined-probes
+kubectl describe pod kuard-combined
 ```
 
 ## 📊 Sprawdzanie stanu sond
 
 ```bash
 # Sprawdź szczegółowe informacje o sondach
-kubectl describe pod combined-probes | grep -A 10 "Probe"
+kubectl describe pod kuard-combined
 
 # Sprawdź logi pod kątem problemów z sondami
-kubectl logs combined-probes
+kubectl logs kuard-combined
 ```
 
 ## ❗ Najczęstsze problemy
