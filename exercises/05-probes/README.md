@@ -178,6 +178,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: kuard-combined
+  labels:
+    app: kuard
 spec:
   containers:
   - name: kuard
