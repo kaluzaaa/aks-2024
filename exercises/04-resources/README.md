@@ -184,8 +184,8 @@ kubectl get events -n <namespace>
 # Pokaż wydarzenia związane z konkretnym podem
 kubectl get events --field-selector involvedObject.name=<pod-name>
 
-# Pokaż wydarzenia z ostatnich 5 minut
-kubectl get events --since=5m
+# Pokaż wydarzenia z ostatnich 20
+kubectl get events --sort-by='.metadata.creationTimestamp' | tail -n 20
 
 # Format wyjścia jako tabela z wybranymi kolumnami
 kubectl get events --output=custom-columns=TIMESTAMP:.metadata.creationTimestamp,TYPE:.type,REASON:.reason,MESSAGE:.message
