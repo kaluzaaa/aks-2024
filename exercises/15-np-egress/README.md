@@ -70,7 +70,7 @@ spec:
 
 1. Przygotuj testową aplikację:
 ```bash
-kubectl create deployment test-app --image=nginx -n <login>-prod --labels="app=test"
+kubectl create deployment test-app --image=nginx -n <login>-prod
 kubectl expose deployment test-app --port=80 -n <login>-prod
 ```
 
@@ -113,7 +113,7 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      app: test
+      app: test-app
   policyTypes:
   - Egress
   egress:
@@ -153,7 +153,7 @@ kubectl get networkpolicies -n <login>-prod
 kubectl describe networkpolicy default-deny-egress -n <login>-prod
 
 # Sprawdź logi podów
-kubectl logs -n <login>-prod -l app=test
+kubectl logs -n <login>-prod -l app=test-app
 ```
 
 ## ❗ Najczęstsze problemy
