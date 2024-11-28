@@ -86,19 +86,19 @@ kubectl run test-pod --rm -it --image=giantswarm/tiny-tools -n <login> -- sh
 2. Testowanie DNS w twoim namespace:
 ```bash
 # Krótka nazwa (w tym samym namespace)
-dig nginx-service
+nslookup nginx-service
 
 # Pełna nazwa
-dig nginx-service.<login>.svc.cluster.local
+nslookup nginx-service.<login>.svc.cluster.local
 ```
 
 3. Testowanie DNS z drugiego namespace:
 ```bash
 # Krótka nazwa z namespace
-dig nginx-service.<login>-2
+nslookup nginx-service.<login>-2
 
 # Pełna nazwa
-dig nginx-service.<login>-2.svc.cluster.local
+nslookup nginx-service.<login>-2.svc.cluster.local
 ```
 
 ## 📋 Przydatne komendy diagnostyczne
@@ -120,7 +120,7 @@ kubectl logs -n kube-system -l k8s-app=kube-dns
 | Problem | Rozwiązanie |
 |---------|-------------|
 | DNS nie działa | Sprawdź CoreDNS w namespace kube-system |
-| Timeout przy dig | Sprawdź polityki sieciowe |
+| Timeout przy nslookup | Sprawdź polityki sieciowe |
 | Service niedostępny | Sprawdź nazwę i namespace |
 
 ## ✅ Dobre praktyki
@@ -159,10 +159,10 @@ kubectl logs -n kube-system -l k8s-app=kube-dns
 ### Przykłady resolwingu (dla użytkownika "student1")
 ```bash
 # W tym samym namespace
-dig nginx-service
-# równoważne z: dig nginx-service.student1.svc.cluster.local
+nslookup nginx-service
+# równoważne z: nslookup nginx-service.student1.svc.cluster.local
 
 # Z drugiego namespace
-dig nginx-service.student1-2
-# równoważne z: dig nginx-service.student1-2.svc.cluster.local
+nslookup nginx-service.student1-2
+# równoważne z: nslookup nginx-service.student1-2.svc.cluster.local
 ```
