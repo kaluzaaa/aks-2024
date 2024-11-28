@@ -71,7 +71,7 @@ spec:
           httpGet:
             path: /ready
             port: 8080
-          initialDelaySeconds: 2
+          initialDelaySeconds: 15
           periodSeconds: 5
         livenessProbe:
           httpGet:
