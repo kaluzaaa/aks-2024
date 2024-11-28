@@ -80,14 +80,14 @@ kubectl apply -f default-deny-all.yaml
 
 1. Test ruchu z tego samego namespace (powinien działać):
 ```bash
-kubectl run test-pod --rm -it --image=alpine -n <login>-prod -- sh
+kubectl run test-pod --rm -it --image=alpine -n <login>-prod -- sh -- sleep 3600
 wget -qO- --timeout=2 http://web-prod
 # Powinniśmy zobaczyć stronę nginx
 ```
 
 2. Test ruchu z innego namespace (powinien być zablokowany):
 ```bash
-kubectl run test-pod --rm -it --image=alpine -n <login>-test -- sh
+kubectl run test-pod --rm -it --image=alpine -n <login>-test -- sh -- sleep 3600
 wget -qO- --timeout=2 http://web-prod.<login>-prod
 # Powinien wystąpić timeout
 ```
@@ -130,7 +130,7 @@ kubectl apply -f allow-specific-service.yaml
 
 3. Test z oznaczonym podem:
 ```bash
-kubectl run frontend --image=alpine --labels="role=frontend" -n <login>-test
+kubectl run frontend --image=alpine --labels="role=frontend" -n <login>-test -- sleep 3600
 kubectl exec -it frontend -n <login>-test -- wget -qO- http://web-prod.<login>-prod
 ```
 
