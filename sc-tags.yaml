@@ -1,0 +1,47 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: azure-disk-with-tags-and-rg
+parameters:
+  skuname: Premium_LRS
+  tags: "app=demo"
+  resourceGroup: "aks"
+provisioner: disk.csi.azure.com
+reclaimPolicy: Delete
+volumeBindingMode: WaitForFirstConsumer
+allowVolumeExpansion: true
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-azuredisk-my
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: azure-disk-with-tags-and-rg
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nginx-azuredisk-custom-sc
+spec:
+  nodeSelector:
+    kubernetes.io/os: linux
+  containers:
+    - image: mcr.microsoft.com/mirror/docker/library/nginx:1.23
+      name: nginx-azuredisk
+      command:
+        - "/bin/sh"
+        - "-c"
+        - while true; do echo $(date) >> /mnt/azuredisk/outfile; sleep 1; done
+      volumeMounts:
+        - name: azuredisk01
+          mountPath: "/mnt/azuredisk"
+          readOnly: false
+  volumes:
+    - name: azuredisk01
+      persistentVolumeClaim:
+        claimName: pvc-azuredisk-my
